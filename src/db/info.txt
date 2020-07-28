@@ -1,0 +1,5 @@
+PRODUCTION DB is atlas
+https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/lecture/13729426#questions
+
+CONNECTING TO CLOUD atlas
+-use mongo db compass app -- 
