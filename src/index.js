@@ -28,8 +28,6 @@ app.use(express.json());
 app.use(userRouter);
 app.use(taskRouter);
 //MIDDLEWARE PROVIDED BY EXPRESS -END
-console.log(process.env.PORT);
-console.log(process.env.SENDGRID_API_KEY);
 
 app.listen(port, ()=>{
     console.log("server running on port " + port);
