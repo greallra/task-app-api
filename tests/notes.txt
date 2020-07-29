@@ -1,0 +1,21 @@
+JEST SETUP
+"test" : "jest --watch"
+
+:--runInBand (so jest requiring db from different files , jest doesnt overlap)
+
+
+TESTING APP: WE CREATE A NEW DB ENVIRONMENT
+--problem 1: env variables only exists on nodemon dev script
+--solution
+--problem 2: db env
+--solution: create new db env and setup script env-cmd ./config/dev.env 
+--problem 3 : we need to configure jest env, tell it that out env is node
+--solution
+"jest": {
+    "testEnvironment": "node"
+  },
+
+
+
+
+SUPERTEST(EXPRESS TESTING LIBRARY)
