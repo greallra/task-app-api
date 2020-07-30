@@ -21,6 +21,10 @@ hbs.registerPartials(partialsPath);
 //so can just use this for our css/js
 app.use(express.static(publicDirectoryPath));
 
+app.use((req,res)=>{
+console.log("hey");
+})
+
 app.get('',(req,res)=>{
     //can pass and object to the view
     res.render('index',{

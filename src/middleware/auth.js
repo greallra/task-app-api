@@ -6,14 +6,15 @@ const User = require('../models/user');
 //HANDLES LOGOUT BY DELETING A PARTICULAR TOKEN
 const auth = async (req, res, next) => {
     console.log("auth middleware");
+    res.header('Access-Control-Allow-Origin','*');
     try {
         //get token from header
+        res.header('Access-Control-Allow-Origin','*');
         const token =  req.header('Authorization').replace('Bearer ', '');
         //check token validity
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         //get user from token to get them from db // 2nd param checks token array to see if token exists
         const user = await User.findOne({_id: decoded._id, 'tokens.token': token})
-        console.log("req.headers---", req.headers);
         console.log("token---", token);
         console.log("user----", user);
         console.log("decoded._id,----", decoded._id);
