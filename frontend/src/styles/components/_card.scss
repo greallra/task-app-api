@@ -1,0 +1,60 @@
+$left-width: 15%;
+$right-width: 85%;
+
+.card {
+    background: $pink;
+    border: 4px solid $white;
+    box-sizing: border-box;
+    color: $dark;
+    max-width: 466px;
+    margin:10px auto;
+    padding: 10px;
+    border-radius: 2%;
+    &:hover {
+      border: 4px solid $dark-purple;
+      cursor: pointer;
+    }
+}
+
+.card-left {
+
+  display: flex;
+    div:nth-child(1) {
+    width:$left-width;
+    display: flex;
+    align-items: center;
+
+      span svg {
+        font-size: 2rem;
+        border-radius: 25%;
+        color: $dark-purple;
+      }
+    }
+    div:nth-child(2) { 
+      width:$right-width;
+      min-height: 50px;
+      border-radius: 3%;
+      background: $white;
+      padding: 5px;
+      p {  
+ 
+       
+      }
+    }
+
+}
+.card-right {
+  display: flex;
+  font-size: 0.4rem;
+  div:nth-child(1) {
+    width: $left-width;
+  }
+  div:nth-child(2) { 
+    width: $right-width;
+    .createdtAt {
+      display: block;
+      padding: 10px 0;
+      font-size: $xs-font;
+    }
+  }
+}

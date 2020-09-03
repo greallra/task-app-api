@@ -3,6 +3,7 @@ const router = new express.Router();
 const Task = require('../models/task');
 const auth = require('../middleware/auth');
 
+//CREATE TASK
 router.post('/tasks', auth, async(req, res)=>{
     // const task = new Task(req.body);
     //now we have access to user because of token
@@ -15,6 +16,7 @@ router.post('/tasks', auth, async(req, res)=>{
         const newTask = await task.save();
         res.status(201).send(newTask)
     }catch (e) {
+        console.log(e);
         res.status(400).send(e)
     }
 })

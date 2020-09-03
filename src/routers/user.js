@@ -19,29 +19,31 @@ router.post('/users',async (req, res)=>{
         res.status(201).send({user, token})
     } catch (e) {
         console.log(e);
-        res.status(400).send(e)
+        res.status(400).send({error: e.message})
     }
 })
 
 //LOGIN - will use JWT
 router.post('/users/login', async (req, res)=>{
+    console.log("users route");
     try {
         //creating a custom middleware -- static middleware function because we use it on Model - User
         const user = await User.findByCredentials(req.body.email, req.body.password);
+        
         //creating a custom middleware -- method middleware function because we use it on instance - user
         //send token
-        const token = await user.generateAuthToken()
+        const token = await user.generateAuthToken();
         
         //save token(s) to db
-        user.tokens = user.tokens.concat({token: token})
+        user.tokens = user.tokens.concat({token: token});
         await user.save();
         
         // send back user and token to client- if error isnt thrown above this below line will run
         //toJSON is a model method function that runs on model to filter what we send back to user
         res.send({user, token});
     } catch (e) {
-        console.log(e);
-        res.status(400).send();
+        console.log("my error", e.message);
+        res.status(400).send({error: e.message});
     }
 })
 
@@ -59,10 +61,10 @@ router.post('/users/logout', auth, async (req, res)=>{
         })
         await req.user.save();
         //success
-        res.send();
+        res.send({success: 'logged out'});
     } catch (e) {
         console.log(e);
-        res.status(500).send();
+        res.status(500).send({error: e.message});
     }
 })
 //LOGOUT ALL
@@ -87,6 +89,7 @@ router.get('/users/me', auth, async (req,res)=>{
 
 router.patch('/users/me', auth, async(req,res)=>{
     const updates = Object.keys(req.body);
+    console.log("req.body",req.body);
     const allowedUpdates = ['name', 'email','password','age'];
     //check the properties to update are allowed
     const isValidOperation = updates.every((update)=>{
@@ -94,6 +97,7 @@ router.patch('/users/me', auth, async(req,res)=>{
     })
 
     if(!isValidOperation) {
+ 
         return res.status(400).send({error: 'Invalid updates'})
     }
    /*
@@ -113,6 +117,7 @@ router.patch('/users/me', auth, async(req,res)=>{
         await user.save();
         res.status(200).send(user);
     } catch (e) {
+       console.log("e catch",e);
         //could be 2 types of erros, 1: server, 2: validation
         //2: validation
         res.status(400).send(e);
@@ -123,11 +128,11 @@ router.patch('/users/me', auth, async(req,res)=>{
 router.delete('/users/me', auth, async (req, res)=>{
     try {
         await req.user.remove();
-        sendCancellationEmail(req.user.email,req.user.name)
-        res.send(req.user);
+        // sendCancellationEmail(req.user.email,req.user.name)
+        res.status(200).send({success: 'user deleted'});
     } catch (e) {
         console.log(e);
-        res.send(500).send();
+        res.send(500).send({error: 'coudlnt delete user'});
     }
 })
 
@@ -159,6 +164,7 @@ const upload = multer({
 //'upload' needs to match key in postman
 //2 middlewares is possible
 router.post('/users/me/avatars', auth, upload.single('avatar') , async (req, res)=>{
+    console.log("file", req.file);
     //using sharp here
     //convert to png (all images will be png) + resize
     const buffer = await sharp(req.file.buffer).resize({width:250, height: 250}).png().toBuffer()
@@ -188,6 +194,7 @@ router.delete('/users/me/avatars', auth, async(req, res)=>{
 })
 //url to paste in browser http://localhost:3000/users/5f1ea7b14888f3644abe20e5/avatar
 router.get('/users/:id/avatar', async(req, res)=>{
+    
     try {
         const user = await User.findById(req.params.id);
         if(!user || !user.avatar) {
@@ -199,7 +206,8 @@ router.get('/users/:id/avatar', async(req, res)=>{
         res.set('Content-Type', 'image/png');
         res.send(user.avatar);
     } catch (e) {
-        res.sendStatus(404);
+        console.log("e",e.message);
+        res.status(404).send({error: e.message});
     }
 })
 

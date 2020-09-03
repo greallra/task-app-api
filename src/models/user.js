@@ -93,8 +93,9 @@ userSchema.methods.generateAuthToken = async function (){
     const user = this;
     //generate token : use the users id to sign
     const token = jwt.sign({_id: user._id.toString()}, process.env.JWT_SECRET);
-    user.tokens = user.tokens.concat({ token })
-    await user.save()
+    // user.tokens = user.tokens.concat({ token })
+    // console.log("user genr", user);
+    // // await user.save()
     return token;
 }
 
@@ -105,17 +106,16 @@ userSchema.statics.findByCredentials = async (email, password)=>{
     //find user by email
     const user = await User.findOne({email})
     if(!user) {
-        throw new Error('unable to login');
+        throw new Error('unable to login, incorrect email');
     }
     //if found compare
     const isMatch = await bcrypt.compare(password, user.password);
     if(!isMatch) {
-        throw new Error('Unable to login');
+        throw new Error('Unable to login, incorrect password');
     }
     //return user if found
     return user;
 }
-
 
 //HASING BEFORE SAVING
 //pre runs before something is saved
@@ -147,7 +147,6 @@ next();
 })
 
 //delete user tasks when user is removed
-
 userSchema.pre('remove', async function(next){
     const user = this;
     await Task.deleteMany({owner: user._id});

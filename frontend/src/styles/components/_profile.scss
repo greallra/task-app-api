@@ -1,0 +1,110 @@
+.profile-cont {
+    border: 1px solid $dark-purple;
+    width: 60%;
+    margin: auto;
+    
+    background: $white;
+}
+.profile-block {
+    border-bottom: 1px solid $dark-purple;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.profile-block:nth-child(4) {
+    border-bottom: none;
+}
+.profile-item {
+    display: flex;
+    align-items: center;
+    &:hover {
+        color: lighten($dark-purple, 20%)
+    }
+}
+.avatar-cont {
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        padding: 10px;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+    svg {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+//modal
+#modal-form {
+    border: none;
+    button {
+        margin: 10px auto;
+    }
+    //close svg
+    svg {
+        color: $dark;
+        font-size: 2rem;
+        display: block;
+        margin: auto;
+        &:hover {
+            cursor: pointer;
+        }
+        &:active {
+            color: $dark-purple;
+        }
+    }
+}
+label {
+    // @include button;
+    box-sizing: border-box;
+    text-align: center;
+    /* Style as you please, it will become the visible UI component. */
+ }
+ 
+ #upload-avatar {
+    display: none;
+    position: absolute;
+    z-index: -1;
+    width: 100px;
+ }
+ .avatar-upload-confirm-cont {
+     display: flex !important;
+     align-items: center;
+     padding: 10px;
+     max-width: 100px;
+    .profile-field {
+        font-size: 10px;
+        color: $dark-purple;
+     }
+    
+     .avatar-check {
+        font-size: 14px;
+        font-weight: 1000;
+        height: 11px;
+     }
+ }
+
+ .edit-profile-cont {
+      border: 1px solid $dark-purple;
+    width: 60%;
+    margin: auto;
+  
+    background: $white;
+ }
+ .edit-profile-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+.edit-profile-item {
+    border: none !important;
+    
+}

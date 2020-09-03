@@ -1,0 +1,106 @@
+//colors
+$dark: #191919;
+$white: #fff;
+$green: #2C974B;
+$dark-purple: #4E075D;
+$pink: #F9DCFF;
+$success-green: #4BCA81;
+$background: #E1F2FF;
+$error-red-light: #ffe3e6;
+$error-red-dark: rgba(158,28,35,.2);
+$btn-border: rgba(27,31,35,.15);
+$btn-shadow: 0 1px 0 rgba(27,31,35,.1);
+//fonts
+$xs-font :10px;
+$s-font :12px;
+$m-font :16px;
+$l-font :20px;
+$xl-font :25px;
+
+body {
+    font-family: 'Lemonada', cursive;
+    color: $dark-purple;
+    font-size: $s-font;
+  }
+a {
+    // color: $white;
+    text-decoration: none;
+}
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: $xl-font;
+    font-weight: 800;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: $l-font;
+    font-weight: 800;
+}
+p {
+    color: $dark-purple;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+}
+ 
+#App {
+    background-color: $background;
+    min-height: 100%;
+}
+input, button, submit { border:none; } 
+input[type=text],input[type=password],input[type=email] {
+    padding: 10px;
+    // margin: 10px;
+    border-radius: 2%;
+    border: 1px solid lightgrey;
+}
+.error {
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+    background: $error-red-light;
+    border: 1px solid $error-red-dark;
+}
+.success {
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    background: $success-green;
+    border: 1px solid $green;
+}
+.loading {
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    background: orange;
+    border: 1px solid darken(orange, 25%);
+}
+//hide and retain space
+.hide {
+    visibility: hidden;
+}
+
+//mixins
+@mixin button {
+    display: block;
+    width: 100px;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 5%;
+    border-color: $btn-border;
+    box-shadow: $btn-shadow;
+    color: $white;
+    background-color: $dark-purple;
+    &:hover {
+        cursor: pointer;
+        background-color: lighten($dark-purple, 10%);
+    }
+  }
+  

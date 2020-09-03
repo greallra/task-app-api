@@ -1,0 +1,53 @@
+//user form
+.user-form {
+    max-width: 266px;
+    margin:auto;
+    padding: 20px;
+    background: $white;
+    border: 1px solid lightgrey;
+    border-radius: 2%;
+    //targets all inputs
+    input[type] {
+        width: 100%;
+        margin: 10px 0;
+    }
+    input[type=file] {
+        margin: 10px 0 20px 0;
+    }
+    button {
+        width: 100%;
+        margin: 0;
+    }
+}
+//task form
+.task-form {
+    max-width: 266px;
+    margin:auto;
+    padding: 20px;
+    background: $white;
+    border: 1px solid lightgrey;
+    border-radius: 2%;
+    .btns-cont {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+.description-input-cont {
+    display: flex;
+    justify-content: stretch;
+    input[type=text] {
+        // padding: 10px;
+        width: 100%;
+    }
+}
+.radios-cont {
+    display: flex;
+   padding: 10px 0;
+   justify-content: space-between;
+   * {
+       padding: 4px;
+   }
+   input[type=radio] {
+       cursor: pointer;
+   }
+}

@@ -1,0 +1,28 @@
+button {
+    display: block;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 5%;
+    border-color: $btn-border;
+    box-shadow: $btn-shadow;
+    color: $white;
+    background-color: $dark-purple;
+    &:hover {
+        cursor: pointer;
+        background-color: lighten($dark-purple, 10%);
+    }
+}
+//go back button
+.go-back {
+    background: #fff;
+   color: $dark-purple;
+    display: flex;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+        background-color: lighten($dark-purple, 10%);
+        color: #fff;
+    }
+}

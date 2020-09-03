@@ -1,0 +1,37 @@
+https://www.youtube.com/watch?v=VR5y93CNzeA&list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8&index=7
+FOR CSS ONLY WE NEED
+1. css loader
+2. style loader
+
+-css loader allows webpack to handle css files, its then compiles it into the js bundles, but its useless here 
+-style loader, takes the js from the bundle.js and injects it into the dom in style tags
+-now our css will work
+CODE 
+ {
+    test: /\.css$/i,
+    use: ['style-loader', 'css-loader'],
+}
+
+
+FOR SCSS/SASS WE NEED
+1. sass loader
+2. css loader
+3. style loader
+4. node-sass
+
+-css loader: allows webpack to handle css files, its then compiles it into the js bundles, but its useless here
+-sass loader: translates css files to scss files
+-style loader: takes the js from the bundle.js and injects it into the dom in style tags
+-node-sass: sass-loader needs this to work
+
+CODE 
+ {
+    test: /\.css$/i,
+    use: ['style-loader', 'css-loader', 'sass-loader'],
+}
+
+OPTIONAL
+-mini-css-extract-plugin , puts css into seperate file, better for performance
+-optimize-css-assets-webpack-plugin -  minifiy css - only necessary for production -- see below for implementation
+https://www.youtube.com/watch?v=JlBDfj75T3Y&list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8&index=10
+},

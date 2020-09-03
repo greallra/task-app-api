@@ -1,0 +1,21 @@
+import React from 'react'
+import NavBar from './NavBar'
+
+export default ()=>{
+    return (
+        <>
+         <NavBar/>
+        <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet massa vitae tortor condimentum lacinia. Ultrices vitae auctor eu augue ut lectus arcu. Elementum integer enim neque volutpat. Egestas sed tempus urna et pharetra. Amet purus gravida quis blandit turpis cursus. Faucibus turpis in eu mi bibendum neque. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Fames ac turpis egestas sed tempus urna et pharetra. Arcu felis bibendum ut tristique et egestas quis ipsum suspendisse. Justo laoreet sit amet cursus sit amet dictum sit amet. Netus et malesuada fames ac turpis egestas sed. Fringilla urna porttitor rhoncus dolor purus non enim. Arcu dui vivamus arcu felis bibendum ut tristique et. Venenatis urna cursus eget nunc scelerisque viverra.
+
+Ac tincidunt vitae semper quis lectus. Feugiat pretium nibh ipsum consequat. Sed viverra ipsum nunc aliquet bibendum enim. Suscipit adipiscing bibendum est ultricies. Odio morbi quis commodo odio aenean sed adipiscing diam. Orci eu lobortis elementum nibh. Dignissim cras tincidunt lobortis feugiat vivamus at. Aliquam sem et tortor consequat id. Suspendisse faucibus interdum posuere lorem. Suspendisse ultrices gravida dictum fusce. Facilisis sed odio morbi quis commodo odio aenean sed adipiscing. Ante metus dictum at tempor commodo ullamcorper a lacus. Lorem sed risus ultricies tristique nulla aliquet. Nibh tortor id aliquet lectus proin nibh nisl condimentum.
+
+Tempor nec feugiat nisl pretium fusce. Dui id ornare arcu odio ut sem nulla pharetra. Quis viverra nibh cras pulvinar mattis nunc sed. A scelerisque purus semper eget duis at tellus. Risus feugiat in ante metus. Enim praesent elementum facilisis leo vel fringilla. Est ante in nibh mauris cursus mattis molestie a. Nisl purus in mollis nunc sed id semper risus. Praesent elementum facilisis leo vel fringilla est. Id diam maecenas ultricies mi eget mauris. Justo laoreet sit amet cursus. Egestas pretium aenean pharetra magna ac placerat vestibulum. Venenatis urna cursus eget nunc scelerisque viverra. Quam id leo in vitae turpis. Scelerisque in dictum non consectetur a erat. Feugiat nisl pretium fusce id velit ut tortor pretium. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Rhoncus mattis rhoncus urna neque viverra justo nec. Egestas maecenas pharetra convallis posuere morbi leo.
+
+Facilisi morbi tempus iaculis urna. Gravida arcu ac tortor dignissim. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Sed id semper risus in hendrerit gravida rutrum quisque non. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Quam nulla porttitor massa id neque. Risus sed vulputate odio ut enim. Sit amet luctus venenatis lectus magna fringilla. Ac turpis egestas sed tempus urna et pharetra pharetra. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Mauris pharetra et ultrices neque ornare aenean. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Sed pulvinar proin gravida hendrerit lectus a. Iaculis urna id volutpat lacus laoreet non.
+
+Praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Gravida in fermentum et sollicitudin ac orci phasellus. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Massa placerat duis ultricies lacus sed turpis tincidunt. Erat pellentesque adipiscing commodo elit. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat. Orci nulla pellentesque dignissim enim sit amet venenatis. Aliquet porttitor lacus luctus accumsan tortor posuere ac. Est pellentesque elit ullamcorper dignissim cras. Dui accumsan sit amet nulla facilisi morbi. Ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan. Risus viverra adipiscing at in.
+        </div>
+        </>
+    )
+}

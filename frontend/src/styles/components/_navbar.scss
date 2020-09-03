@@ -1,0 +1,24 @@
+nav {
+    background-color: $dark-purple;
+    color: $white;
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        li {
+            a {
+                color: $white;
+                display: block;
+                padding: 20px;
+                &:hover {
+                    background: darken($dark-purple, 5%);
+                    cursor: pointer;
+                }
+            }
+            
+        }
+    }
+}
+.active {
+    background-color: darken($dark-purple, 10%);
+}
