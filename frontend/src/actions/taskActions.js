@@ -73,7 +73,6 @@ export const startCreateTask = (newTask)=>{
             dispatch(setFetchStatus({page: "", status: ""}))
         } catch (e) {
             console.log(e);
-            dispatch(setMessage('error start create task'))
             dispatch(setFetchStatus({page: "", status: ""}))
         }
     }
