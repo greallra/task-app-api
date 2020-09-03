@@ -4,7 +4,8 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //doesnt work with hot module, ideally just use in production
 
 
-console.log("process.env.NODE_ENV", process.env.NODE_ENV); 
+console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+const isProduction =  process.env.NODE_ENV === 'production';
 if(process.env.NODE_ENV ==='test') {
   // require('dotenv').config({path: 'env/.env.tests'})
 }
@@ -20,7 +21,7 @@ console.log(process.env.API_URL)
 module.exports = {
     entry: path.resolve(__dirname, 'src/index.js'),
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, isProduction ? 'production': 'public'),
         publicPath: '/',
         filename: 'bundle.js' 
     },
