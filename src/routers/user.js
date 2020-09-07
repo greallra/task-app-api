@@ -80,6 +80,17 @@ router.post('/users/logoutAll', auth, async (req, res)=>{
         res.status(500).send();
     }
 })
+//admin- all users
+router.get('/users', async (req,res)=>{
+    //auth was already done
+    try {
+        let users = await User.find({})
+        res.status(200).send(users)
+    } catch (e) {
+        console.log(e);
+        res.status(500).send();
+    }
+})
 
 //altered to get one profile
 router.get('/users/me', auth, async (req,res)=>{

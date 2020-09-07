@@ -49,7 +49,6 @@ app.get('*', (req,res, next)=>{
     res.sendFile(path.join(publicPath, 'index.html'))
 })
 
-
 module.exports = app;
 
 /*
