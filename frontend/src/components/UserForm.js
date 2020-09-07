@@ -11,6 +11,7 @@ const UserForm = ({page, status, passUpFormData, formType})=>{
         e.preventDefault();
         passUpFormData({name,email,password,age});
     }
+    console.log("test", formType);
 
     return (
         <>
@@ -20,9 +21,10 @@ const UserForm = ({page, status, passUpFormData, formType})=>{
             <input type="email" placeholder="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
             <input type="password" placeholder="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
             <button type="submit">
-                {page === 'login' && status === 'loading'? 'Logging in...' : ''}
+                {formType === 'login' && status === 'loading'? 'Logging in...' : ''}
+                {formType === 'login' && status !== 'loading'? 'Login' : ''}
 
-                {formType === 'signup' && status !== 'loading' ? 'Sign Up' : 'Login'}
+                {formType === 'signup' && status !== 'loading' ? 'Sign Up' : ''}
             </button>
         </form> 
         </>

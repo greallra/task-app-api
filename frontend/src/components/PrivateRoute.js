@@ -7,7 +7,7 @@ import NavBar from '../components/NavBar';
 //On private route, if logged in
 
 export const PrivateRoute = ({token, component: Component, ...restOfTheProps})=>{ //props of the store, Router provided props, and the component renamed
-    
+    console.log("at this moment any token in Private route?", token);
     return(
         <Route {...restOfTheProps}
         component={(props)=>( //props in the above component

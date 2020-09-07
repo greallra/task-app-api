@@ -22,8 +22,9 @@
                 return task;
               }     
             })
-            console.log("mp", mp);
             return mp;
+          case 'RESET_TASKS':
+            return []
           default:
             return state
       }

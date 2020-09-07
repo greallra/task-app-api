@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { AiOutlineCheck } from "react-icons/ai";
-import { MdClose, MdError } from "react-icons/md";
+import { MdClose, MdError, MdCheck } from "react-icons/md";
 import { isLength, isEmail, isNumeric } from 'validator';
 import { startEditProfile } from '../actions/userActions';
 import Loader from 'react-loader-spinner';
 import { MdKeyboardArrowLeft } from "react-icons/md";
+import Modal from 'react-modal';
+
+const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)',
+     
+    }
+  };
+   
 
 const EditProfile = (props)=>{
     const [isValid, setValidity] = useState(true);
@@ -13,6 +27,7 @@ const EditProfile = (props)=>{
     const [editField, setEditField] = useState('');
     //email value
     const [editValue, setEditValue] = useState('');
+    const [modalIsOpen,setIsOpen] = React.useState(false);
 
     useEffect(()=>{
         let path = props.location.pathname;
@@ -60,6 +75,21 @@ const EditProfile = (props)=>{
 
     function handleSubmit(){
         props.editProfile({[editField]: editValue});
+        openModal();
+    }
+    //modal functions
+    
+    function openModal() {
+      setIsOpen(true);
+    }
+    function afterOpenModal() {
+
+    }
+   
+    function closeModal(){
+        console.log("testu");
+      setIsOpen(false);
+        props.history.push('/profile')
     }
 
     return <>
@@ -86,7 +116,19 @@ const EditProfile = (props)=>{
             width={100}
             />
         </div>:''}
-        {props.page === 'profile-edit' && props.status === 'success' ? "success":""}
+       <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+        //   contentLabel="Example Modal"
+        //   modName={modName}
+        >
+        <div  className="modal-confirm-close">
+            <div>Success</div>
+            <div onClick={closeModal}>Confirm <MdCheck/></div>
+        </div>   
+        </Modal>
     </>
     
  

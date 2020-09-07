@@ -1,6 +1,6 @@
 import {setToken, setTokenValidity} from './authActions';
 import { setFetchStatus } from "./statusActions";
-import { startGetTasks } from './taskActions';
+import { startGetTasks, resetTasks } from './taskActions';
 import { clearToken, setTokenLS } from '../utils/localStorage';
 import { createFetchOptionsObject, createAuthHeader } from '../utils/fetchHelpers';
 import axios from 'axios';
@@ -59,8 +59,11 @@ export const startLogout = ()=>{
             dispatch(setToken(""))
             dispatch(setFetchStatus({page: 'logout', status: 'success'}))
             dispatch(resetUser())
+            dispatch(resetTasks())
             clearToken();
-            // window.location.href = "/"
+            // setTimeout(()=>{
+            //     window.location.href = "/"
+            // }, 3000)     
 
         }catch(e) {
             console.log(e)

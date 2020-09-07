@@ -2,6 +2,8 @@ import axios from 'axios';
 import { createAuthHeader } from '../utils/fetchHelpers';
 import { setFetchStatus } from './statusActions';
 
+//RESET TASKS
+export const resetTasks = ()=>({type: 'RESET_TASKS'})
 //GET MULIPLE TASKS
 export const getTasks = (tasks)=>({
         type: 'GET_TASKS',

@@ -10,6 +10,7 @@ import TaskEdit from './TaskEdit';
 import TaskCreate from './TaskCreate';
 import Home from './Home';
 import EditProfile from './EditProfile';
+import Admin from './Admin';
 
 import {
   BrowserRouter as Router,
@@ -51,6 +52,10 @@ export default function AppRouter() {
                  <PrivateRoute 
                     path="/task_create"
                     component={TaskCreate}
+                />
+                 <Route 
+                    path="/admin"
+                    component={Admin}
                 />
                 <PublicRoute 
                     path="/login" 

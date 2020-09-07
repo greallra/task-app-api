@@ -63,9 +63,10 @@
     }
 }
 label {
-    // @include button;
+    @include btn;
     box-sizing: border-box;
     text-align: center;
+    margin: 10px auto;
     /* Style as you please, it will become the visible UI component. */
  }
  
@@ -103,8 +104,22 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    input {
+        width: 100%;
+        &:focus {
+            outline: 0;
+        }
+      
+    }
  }
 .edit-profile-item {
-    border: none !important;
-    
+    border: none !important;  
+}
+//modal
+.modal-confirm-close {
+    &:hover {
+        cursor: pointer;
+        background: $dark-purple;
+        color: white;
+    }
 }

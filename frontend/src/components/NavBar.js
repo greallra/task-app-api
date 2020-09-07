@@ -22,6 +22,9 @@ function NavBar({token, logout, history, status, page}) {
                     <li>
                     <NavLink to="/dashboard">Dashboard</NavLink>
                     </li> 
+                    {/* <li>
+                    <NavLink to="/admin">Admin</NavLink>
+                    </li>  */}
                     <li>
                     <a onClick={handleLogout}>{status === 'loading' && page === 'logout'? 'Logging out...': 'Logout'}</a>
                     </li> 

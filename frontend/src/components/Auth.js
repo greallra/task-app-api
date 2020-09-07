@@ -2,9 +2,7 @@ import React from 'react';
 import AppRouter from './AppRouter';
 import { connect } from 'react-redux';
 import {checkLsForToken} from '../utils/localStorage';
-import {startGetTasks} from '../actions/taskActions';
 import { startReadProfile } from '../actions/userActions';
-import { setToken } from '../actions/authActions';
 
 const Auth = ({readProfile})=>{
     //will only run on refresh
